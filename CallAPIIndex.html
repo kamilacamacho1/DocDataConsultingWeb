@@ -1,0 +1,82 @@
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="~/css/main.css" />
+
+  <body class="maincontainer">
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100" style="max-width: 100%;">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="max-width: 100%;">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Bienvenido a nuestra primera demo</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5" style="color: white;margin-bottom: 0px;">Escriba su nombre:</p>
+                    <input class="textfield" type="text" id="userIdentity" size="50" value="" />
+                    <p style="font-size: 14px;margin: 0px;padding: 0px;color: white">* No proporcione caracteres especiales ni espacios.</p>
+                    <button id="connectBtn" href="#container">Conectar</button>
+                    <button id="disconnectBtn" disabled>Desconectar</button>
+                    </p>
+                    <div id="sipIdentity" style="color:white;"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section id="container">
+        <br>
+        <div style="text-align: center" id="status"></div>
+        <div class="box">
+            <br></br>
+            @*<span class="fieldName">Domain : </span>*@
+            <input style="margin-left: 0.8em" class="textfield" type="text" id="engageDomain" size="50"
+                   placeholder="rtc.radisys.com" value="rtc.engagedigital.ai" hidden />
+        </div>
+        <div class="videoContainer">
+            <div class="innervideo">
+                <div class="watermark">Local Video</div><video id="localVideo" playsinline autoplay muted></video>
+            </div>
+            <div class="innervideo">
+                <div class="watermark">Remote Video</div><video id="remoteVideo" playsinline autoplay></video>
+            </div>
+        </div>
+
+        <div class="subbox">
+            <br>
+            <span class="fieldName"></span>
+            <input class="textfield" type="text" id="callTo"
+                   size="50" placeholder="eg: +919090909090, 18000001234, +14155552671" value="9070707120" hidden />
+            <button id="makeCallBtn" disabled>Call</button>
+            <button id="endCallBtn" disabled>Hang Up</button>
+            <br>
+        </div>
+    </section>
+    <div id="incomingCallDialog" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 id="acceptOrReject" class="modal-title">Incoming Call</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="lblMsgConfirmYesNo"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="acceptCallBtn" type="button" class="btn btn-primary">Yes</button>
+                        <button id="rejectCallBtn" type="button" class="btn btn-default">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/main.js"></script>
+    <!-- Footer-->
+    <footer class="bg-light py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-muted">Copyright &copy; 2022 - Hybrids 3.0</div>
+        </div>
+    </footer>
+</body>
